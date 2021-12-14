@@ -1,15 +1,31 @@
 <template>
-    <div :class="[{'active':checked},'switch']" @click="toggle">
-        <span :class="{'checked':checked}"></span>
+    <div :class="[{'active':value},'switch']" @click="toggle">
+        <span :class="{'checked':value}"></span>
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup  lang="ts">
 import { ref } from "@vue/reactivity";
-  const checked = ref(true)
-  const toggle = ()=>{
-      checked.value = !checked.value
-  }
+// export default{
+//    props:{
+//        value: Boolean
+//    },
+//    setup(props: { value: any; },context: { emit: (arg0: string, arg1: boolean) => void; }){
+//      const toggle = ()=>{
+//          context.emit('update:value',!props.value)
+//      }
+//      return {
+//          toggle
+//      }
+//    }
+// }
+ const props = defineProps({
+     value:Boolean
+ })
+ const emit = defineEmits(['update:value', 'delete'])
+ const toggle = ()=>{
+     emit('update:value',!props.value)
+ }
 </script>
 
 <style lang='scss' scoped>
