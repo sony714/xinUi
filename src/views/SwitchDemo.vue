@@ -9,7 +9,7 @@ import { ref } from '@vue/reactivity';
 import Switch from '../lib/Switch.vue';
   let checked = ref(false)
 </script>
-
+ 
 <style scoped>
 
 </style>

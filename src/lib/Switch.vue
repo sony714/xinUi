@@ -33,26 +33,25 @@ import { ref } from "@vue/reactivity";
    .switch{
        width: 70px;
        height: $h;
-       background-color: pink;
-       border: 1px solid red;
+       background-color: #ddd;
        border-radius:calc($h/2);  
        position: relative;
        span{
            width: 30px;
            height: 28px;
-           background: #0586db;
+           background: #fff;
            position: absolute;
-           left: 38px;
-           top: 2;
+           left: 2px;
+           top: 1px;
            border-radius:50%;
            transition: left 300ms;
        }
    }
   .switch span.checked{
-       left: 2px;
+       left: 38px;
    }
    .switch.active{
-       background-color: yellowgreen;
+       background-color: blue;
    }
    
 </style>
