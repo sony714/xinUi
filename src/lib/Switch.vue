@@ -1,24 +1,11 @@
 <template>
-    <div :class="[{'active':value},'switch']" @click="toggle">
+    <div :class="[{'active':value},'xinxin-switch']" @click="toggle">
         <span :class="{'checked':value}"></span>
     </div>
 </template>
 
 <script setup  lang="ts">
 import { ref } from "@vue/reactivity";
-// export default{
-//    props:{
-//        value: Boolean
-//    },
-//    setup(props: { value: any; },context: { emit: (arg0: string, arg1: boolean) => void; }){
-//      const toggle = ()=>{
-//          context.emit('update:value',!props.value)
-//      }
-//      return {
-//          toggle
-//      }
-//    }
-// }
  const props = defineProps({
      value:Boolean
  })
@@ -27,10 +14,10 @@ import { ref } from "@vue/reactivity";
      emit('update:value',!props.value)
  }
 </script>
-
-<style lang='scss' scoped>
+ 
+<style lang='scss'>
     $h:30px;
-   .switch{
+   .xinxin-switch{
        width: 70px;
        height: $h;
        background-color: #ddd;
@@ -47,10 +34,10 @@ import { ref } from "@vue/reactivity";
            transition: left 300ms;
        }
    }
-  .switch span.checked{
+  .xinxin-switch span.checked{
        left: 38px;
    }
-   .switch.active{
+   .xinxin-switch.active{
        background-color: blue;
    }
    

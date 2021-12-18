@@ -5,8 +5,8 @@
 </template>
  
 <script setup lang="ts">
-import { ref } from '@vue/reactivity';
 import Switch from '../lib/Switch.vue';
+import { ref } from '@vue/reactivity';
   let checked = ref(false)
 </script>
  
