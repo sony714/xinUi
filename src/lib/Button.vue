@@ -1,7 +1,6 @@
 import { computed } from "vue";
 
 <template>
-  <div>
     <button
       class="xinxin-button"
       :class="classes"
@@ -10,7 +9,6 @@ import { computed } from "vue";
       <span v-if="loading" class="xinxin-loading"></span>
       <slot />
     </button>
-  </div>
 </template>
 
 <script setup lang="ts">
