@@ -13,7 +13,7 @@
           </div>
       </template>
         </Dialog>
-        <Button @click="toggle">
+        <Button @click="toggle" theme='danger'>
             <span>弹窗</span>
         </Button>
     </div>
@@ -46,10 +46,12 @@ import {openDialog} from '../until/dialog'
  const toggle = ()=>{
      visible.value = !visible.value
  }
+ const content = 'I an Dialog ,what is your name'
+ const title = 'Hi I am Title'
  const show = ()=>{
      openDialog({
-         title:'标题',
-         content:'内容'
+         title,
+         content
      })
  }
 </script>

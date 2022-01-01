@@ -46,7 +46,7 @@ const close = () => {
   border-radius: 2px;
   box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
   box-sizing: border-box;
-  width: 50%;
+  width: 30%;
   header {
     padding: 20px 20px 10px;
     .xinxin-dialog_title {

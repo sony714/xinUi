@@ -16,8 +16,8 @@ export function openDialog(options: { title: any; content: any; }){
                  }
              }
          },{
-            title:title,
-            content:content,
+            title,
+            content
          })
      }
  })
