@@ -3,10 +3,10 @@ import { inject } from "@vue/runtime-core";
 import Topnav from "../components/Topnav.vue";
 const menuVisible = inject("menuVisible");
 </script>
-
+ 
 <template>
   <div class="layout">
-    <Topnav class="nav" />
+    <Topnav class="nav" toggleMenuButtonVisible />
     <div class="content">
       <aside v-if="menuVisible">
         <div class="tabBar">
@@ -53,7 +53,6 @@ const menuVisible = inject("menuVisible");
 }
 .content {
   display: flex;
-  background-color: pink;
   aside {
     flex-shrink: 0;
     width: 150px;
@@ -79,7 +78,6 @@ const menuVisible = inject("menuVisible");
   }
   main {
     flex-grow: 1;
-    background-color:  #16d840;
     padding: 20px;
     overflow: auto;
   }
