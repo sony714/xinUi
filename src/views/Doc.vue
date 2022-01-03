@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inject } from "@vue/runtime-core";
+import { inject, ref } from "@vue/runtime-core";
 import Topnav from "../components/Topnav.vue";
 const menuVisible = inject("menuVisible");
 </script>
@@ -12,6 +12,15 @@ const menuVisible = inject("menuVisible");
         <div class="tabBar">
           <h3>路由列表</h3>
           <ul>
+             <li>
+                <router-link to="/doc/intro">介绍</router-link>
+             </li>
+              <li>
+                <router-link to="/doc/ins">安装</router-link>
+             </li>
+              <li>
+                <router-link to="/doc/start">开始使用</router-link>
+             </li>
             <li>
               <router-link to="/doc/dialog">dialog</router-link>
             </li>
@@ -35,6 +44,9 @@ const menuVisible = inject("menuVisible");
 </template>
 
 <style lang="scss" scoped>
+.router-link-active{
+  background-color: #ccc;
+}
 .layout {
   display: flex;
   flex-direction: column;
@@ -69,10 +81,10 @@ const menuVisible = inject("menuVisible");
       }
       ul li {
         text-align: center;
-        padding: 10px 0;
-        &:hover {
-          background-color: #ccc;
-        }
+       a{
+         display: block;
+         padding: 10px 0;
+       }
       }
     }
   }

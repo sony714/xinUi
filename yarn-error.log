@@ -1,0 +1,46 @@
+Arguments: 
+  D:\Software\Node\node.exe D:\Software\yarn\bin\yarn.js add --dev marked
+
+PATH: 
+  C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Software\Git\Git\cmd;D:\Software\Node\;C:\ProgramData\chocolatey\bin;D:\Software\yarn\bin\;C:\Users\meng\AppData\Local\Microsoft\WindowsApps;D:\Software\压缩文件\;C:\Users\meng\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\meng\AppData\Roaming\npm;C:\Users\meng\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.17.6
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\meng\strongerMy\xixiUi\node_modules\esbuild-windows-64\esbuild.exe'
+
+npm manifest: 
+  {
+    "name": "xixiui",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vue-tsc --noEmit && vite build",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "github-markdown-css": "^5.1.0",
+      "vue": "^3.2.23",
+      "vue-router": "^4.0.12"
+    },
+    "devDependencies": {
+      "@vitejs/plugin-vue": "^1.10.2",
+      "sass": "^1.45.0",
+      "typescript": "^4.4.4",
+      "vite": "^2.7.0",
+      "vue-tsc": "^0.28.10"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
