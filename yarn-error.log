@@ -1,5 +1,5 @@
 Arguments: 
-  D:\Software\Node\node.exe D:\Software\yarn\bin\yarn.js add --dev marked
+  D:\Software\Node\node.exe D:\Software\yarn\bin\yarn.js add @vue/compiler-sfc
 
 PATH: 
   C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Software\Git\Git\cmd;D:\Software\Node\;C:\ProgramData\chocolatey\bin;D:\Software\yarn\bin\;C:\Users\meng\AppData\Local\Microsoft\WindowsApps;D:\Software\压缩文件\;C:\Users\meng\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\meng\AppData\Roaming\npm;C:\Users\meng\AppData\Local\Yarn\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'D:\meng\strongerMy\xixiUi\node_modules\esbuild-windows-64\esbuild.exe'
+  Error: EPERM: operation not permitted, unlink 'D:\meng\strongerMy\xixiUi\node_modules\esbuild\esbuild.exe'
 
 npm manifest: 
   {
@@ -31,10 +31,12 @@ npm manifest:
       "vue-router": "^4.0.12"
     },
     "devDependencies": {
+      "@types/node": "^17.0.6",
       "@vitejs/plugin-vue": "^1.10.2",
+      "marked": "^4.0.8",
       "sass": "^1.45.0",
       "typescript": "^4.4.4",
-      "vite": "^2.7.0",
+      "vite": "1.0.0-rc.1",
       "vue-tsc": "^0.28.10"
     }
   }

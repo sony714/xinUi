@@ -1,18 +1,18 @@
 <script setup lang="ts">
-  import { provide, ref } from 'vue'
-import { router } from './until/router'
-   
-  let width = document.documentElement.clientWidth
-  addEventListener('resize',()=>{
-    width = document.documentElement.clientWidth
-  })
-  const menuVisible = ref(width>500?true:false)
-   router.afterEach(()=>{
-    if(width<=500){
-       menuVisible.value = !menuVisible.value
-    }
-  })
-  provide('menuVisible',menuVisible)
+import { provide, ref } from "vue";
+import { router } from "./until/router";
+
+let width = document.documentElement.clientWidth;
+addEventListener("resize", () => {
+  width = document.documentElement.clientWidth;
+});
+const menuVisible = ref(width > 500 ? true : false);
+router.afterEach(() => {
+  if (width <= 500) {
+    menuVisible.value = !menuVisible.value;
+  }
+});
+provide("menuVisible", menuVisible);
 </script>
 
 <template>

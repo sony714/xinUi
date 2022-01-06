@@ -3,7 +3,7 @@ import { inject, ref } from "@vue/runtime-core";
 import Topnav from "../components/Topnav.vue";
 const menuVisible = inject("menuVisible");
 </script>
- 
+
 <template>
   <div class="layout">
     <Topnav class="nav" toggleMenuButtonVisible />
