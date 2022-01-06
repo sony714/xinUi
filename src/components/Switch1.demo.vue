@@ -1,6 +1,4 @@
-<demo>
-常规用法
-</demo>
+
 <template>
   <Switch v-model:value="checked"/>
 </template>
@@ -9,8 +7,9 @@
 import Switch from '../lib/Switch.vue';
 import { ref } from '@vue/reactivity'; 
  let checked = ref(false)
-  defineExpose({
-    Switch1Demo
+defineExpose({
+  Switch,
+  checked
 })
 </script>
 
