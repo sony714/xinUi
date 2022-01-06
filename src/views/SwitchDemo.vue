@@ -9,7 +9,7 @@
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
-     <!-- <pre>{{Switch1Demo.__sourceCode}}</pre> -->
+     <pre>{{Switch1Demo.__sourceCode}}</pre>
     </div>
   </div>
 </template>
