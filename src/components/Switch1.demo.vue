@@ -11,7 +11,7 @@ import { ref } from '@vue/reactivity';
 </script>
  
 <demo>
-  常规用法
+ 常规用法
 </demo>
 <style scoped>
 

@@ -10,13 +10,14 @@ const demoPlugin = {
   transform(code,id){ 
     if (!/vue&type=demo/.test(id)) {
       return
-    } 
-    console.log(id)
+    }
     // const { code, path } = options;
-    const file = fs.readFileSync('D:/meng/strongerMy/xixiUi/src/components/Switch1.demo.vue').toString();
+    const index = id.indexOf('?')
+    const path = id.slice(0,index)
+    const file = fs.readFileSync(path).toString();
     // console.log(baseParse(file),code)
     const parsed = baseParse(file).children.find((n) => n.tag === "demo");
-    const title = parsed.children[0].content;
+    const title = parsed.children[0].content
     const main = file.split(parsed.loc.source).join("").trim();
     return `export default function (Component) {
       Component.__sourceCode = ${JSON.stringify(main)}
