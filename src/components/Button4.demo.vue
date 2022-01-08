@@ -1,10 +1,8 @@
 <demo>
- 圆角按钮
+ 大按钮和小按钮
 </demo>
 
 <template>
-     <h3>大按钮和小按钮</h3>
-    <div>
     <Button theme="default" size="big">
       <span>大大大大</span>
     </Button>
@@ -17,7 +15,6 @@
     <Button theme="danger" size="mini">
       <span>超小超小</span>
     </Button>
-  </div>
 </template>
 
 <script setup lang="ts">

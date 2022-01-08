@@ -1,9 +1,9 @@
 {
-  "name": "xixiui",
+  "name": "Xin-ui",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {

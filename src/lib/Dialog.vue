@@ -12,7 +12,7 @@
           <slot name="content" />
         </main>
         <footer>
-          <Button theme="success">确认</Button>
+          <Button theme="success" @click="confirm">确认</Button>
           <Button theme="danger" @click="cancel">取消</Button>
         </footer>
       </div>
@@ -35,6 +35,10 @@ const cancel = () => {
 const close = () => {
   emit("update:visible", !props.visible);
 };
+const confirm = ()=>{
+  emit("update:visible",!props.visible)
+}
+
 </script>
 
 <style lang="scss">
@@ -47,6 +51,10 @@ const close = () => {
   box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
   box-sizing: border-box;
   width: 30%;
+   @media(max-width:500px){
+     width: 80%;
+     left: 10%;
+  }
   header {
     padding: 20px 20px 10px;
     .xinxin-dialog_title {

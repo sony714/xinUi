@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 <template>
   <div class="xinxin-tabs">
     <div class="xinxin-tabs-wrap" ref="container">

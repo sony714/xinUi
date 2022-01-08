@@ -1,10 +1,8 @@
 <demo>
- 圆角按钮
+ 禁用按钮
 </demo>
 
 <template>
-     <h3>禁用按钮</h3>
-  <div>
     <Button theme="default" disabled>
       <span>默认按钮</span>
     </Button>
@@ -20,7 +18,6 @@
     <Button theme="info" disabled>
       <span>朴素按钮</span>
     </Button>
-  </div>
 </template>
 
 <script setup lang="ts">

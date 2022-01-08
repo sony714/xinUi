@@ -1,11 +1,8 @@
 <demo>
  普通按钮
 </demo>
-
-
-
+ 
 <template>
-    <div>
     <Button theme="default">
       <span>默认按钮</span>
     </Button>
@@ -21,7 +18,6 @@
     <Button theme="info">
       <span>朴素按钮</span>
     </Button>
-  </div>
 </template>
 
 <script setup lang="ts">

@@ -10,8 +10,9 @@ import Ins  from '../views/Ins.vue'
 
 import {createWebHashHistory,createRouter} from 'vue-router'
 const routes = [
-    { path: '/', component: Home},
+    { path: '/', component: Home},  
      {path:'/doc',component: Doc,children:[
+       {path:'',redirect:'/doc/intro'},
       {path:'intro',component:Intro},
       {path:'ins',component:Ins},
       {path:'start',component:Start},

@@ -6,13 +6,10 @@
 </template>
 <demo>示例</demo>
 <script setup lang="ts">
-  import Tabs from '../lib/Tabs.vue'
+ import Tabs from '../lib/Tabs.vue'
  import Tab from '../lib/Tab.vue'
  import { ref } from 'vue';
- 
  let select = ref('导航五十')
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

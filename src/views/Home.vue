@@ -1,23 +1,23 @@
 <template>
   <div class="topnavAndBanner">
-  <Topnav />
-  <div class="main">
-    <div class="top">
-      <h2>新新UI</h2>
-      <p>一个非常厉害的UI，简洁好用</p>
-    </div>
-    <div class="bottom">
-      <ul>
-        <li>
-          <router-link to="/doc">起步</router-link>
-        </li>
-        <li><a href="http://github.com">GitHub</a></li>
-      </ul>
+    <Topnav />
+    <div class="main">
+      <div class="top">
+        <h2>xinUI</h2>
+        <p>一个非常厉害的UI，简洁好用</p>
+      </div>
+      <div class="bottom">
+        <ul>
+          <li>
+            <router-link to="/doc">起步</router-link>
+          </li>
+          <li><a href="https://github.com/sony714/xinUi">GitHub</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<div class="features">
-     <ul>
+  <div class="features">
+    <ul>
       <li>
         <svg>
           <use xlink:href="#icon-Vue"></use>
@@ -29,7 +29,7 @@
         <svg>
           <use xlink:href="#icon-ts"></use>
         </svg>
-        <h3>基于 TypeScript </h3>
+        <h3>基于 TypeScript</h3>
         <p>源代码采用 TypeScript 书写（非严格检查）</p>
       </li>
       <li>
@@ -51,24 +51,33 @@ import Topnav from "../components/Topnav.vue";
 $green: #02bcb0;
 $border-radius: 14px;
 $color: #007974;
-.topnavAndBanner{
-  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+.topnavAndBanner {
+  background: linear-gradient(
+    145deg,
+    rgba(227, 255, 253, 1) 0%,
+    rgba(183, 233, 230, 1) 100%
+  );
   clip-path: ellipse(80% 60% at 50% 40%);
+  @media(max-width:500px){
+    clip-path: ellipse(80% 60% at 50% 30%);
+  }
 }
 .features {
-  margin: 64px auto;
+  margin: 16px auto;
   width: 400px;
   @media (min-width: 800px) {
+    margin: 64px auto;
     width: 800px;
   }
   @media (min-width: 1200px) {
+    margin: 64px auto;
     width: 1200px;
   }
-  >ul {
+  > ul {
     display: flex;
     flex-wrap: wrap;
-    >li {
-      width: 400px;
+    > li {
+      width: 380px;
       margin: 16px 0;
       display: grid;
       justify-content: start;
@@ -78,30 +87,30 @@ $color: #007974;
         "icon text";
       grid-template-columns: 80px auto;
       grid-template-rows: 1fr auto;
-      >svg {
+      > svg {
         grid-area: icon;
         width: 64px;
         height: 64px;
       }
-      >h3 {
+      > h3 {
         grid-area: title;
         font-size: 28px;
       }
-      >p {
-        grid-area: text
+      > p {
+        grid-area: text;
       }
     }
-}
+  }
 }
 .main {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 50vh;
   .top {
-      margin-bottom: 20px;
-      color: $color;
+    margin-bottom: 20px;
+    color: $color;
     > h2 {
       text-align: center;
       padding: 20px;
@@ -111,15 +120,15 @@ $color: #007974;
     ul {
       display: flex;
       li {
-        padding: 10px;
-        display: inline-block;
         border: 1px solid #ddd;
         border-radius: $border-radius;
         margin: 10px;
-        cursor: pointer;
         background-color: $green;
-        a{
+        a {
           color: #fff;
+          padding: 10px;
+          cursor: pointer;
+          display: inline-block;
         }
       }
     }

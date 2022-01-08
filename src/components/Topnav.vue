@@ -1,30 +1,34 @@
+
+// @ts-nocheck
 <template>
     <div class="topNav">
-       <div class="toggle" @click="toggle" v-if="toggleMenuButtonVisible">
-            <svg class="icon">
+      <div class="toggle" @click="toggle" v-if="toggleMenuButtonVisible">
+       <svg class="icon">
          <use xlink:href="#icon-menu"></use>
       </svg>
-       </div>
-    <router-link class="logo" to="/">
+    </div>
+    <router-link to="/" class="logo">
       <svg class="icon">
          <use xlink:href="#icon-king"></use>
       </svg>
     </router-link>
     <div class="menu">
-      <span class="menu_item">文档</span>
-      <!-- <span class="menu_item">菜单二</span> -->
+      <router-link to="/" class="menu_item">文档</router-link>
     </div>
   </div>
 </template>
 
 <script  setup lang="ts">
 import { inject } from "@vue/runtime-core";
+import { useRouter } from "vue-router";
+
   const props = defineProps({
      toggleMenuButtonVisible: {
       type: Boolean,
       default: false
     }
   })
+  const router = useRouter()
   let menuVisible = inject('menuVisible')
   const toggle = function(){
     menuVisible.value = !menuVisible.value
@@ -40,6 +44,7 @@ $green: #02bcb0;
   width: 100%;                    
   display: flex;
   justify-content: space-between;
+   z-index: 10;
   .logo {
     padding-left: 30px;
     .icon{
