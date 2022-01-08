@@ -33,6 +33,9 @@ const menuVisible = inject("menuVisible");
             <li>
               <router-link to="/doc/tabs">tabs</router-link>
             </li>
+             <li>
+              <router-link to="/doc/calendar">calendar</router-link>
+            </li>
           </ul>
         </div>
       </aside>
@@ -76,7 +79,8 @@ const menuVisible = inject("menuVisible");
     height: 100%;
     .tabBar {
       margin: 0 auto;
-      h3{
+      background-color: #80bbeb;
+      h3{ 
         text-align: center;
       }
       ul li {

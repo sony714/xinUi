@@ -7,6 +7,7 @@ import DialogDemo from '../views/DialogDemo.vue'
 import Intro from '../views/Intro.vue'
 import Start from  '../views/Start.vue'
 import Ins  from '../views/Ins.vue'
+import Calendar from '../views/CalendarDemo.vue'
 
 import {createWebHashHistory,createRouter} from 'vue-router'
 const routes = [
@@ -19,7 +20,8 @@ const routes = [
       {path:'switch',component:SwitchDemo},
       {path:'tabs',component:TabsDemo},
       {path:'button',component:ButtonDemo},
-      {path:'dialog',component:DialogDemo}
+      {path:'dialog',component:DialogDemo},
+      {path:'calendar',component:Calendar}
     ]}
   ]
  export const router = createRouter({
