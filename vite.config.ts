@@ -1,9 +1,9 @@
 // @ts-nocheck
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import fs from "fs";
+import fs from "fs"; 
 import { baseParse } from "@vue/compiler-core";
-
+ 
 const demoPlugin = {
   name: 'demo',
   //code块的代码 id链接
@@ -31,5 +31,19 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     open:true
-  } 
+  },
+  build:{
+    lib:{
+      entry:path.resolve(__dirname,'src/lib/index.ts'),
+      name:'myLib'
+    },
+    rollupOptions:{
+      external:['vue'],
+      output:{
+        globals:{
+          vue:'Vue'
+        }
+      }
+    }
+  }
 });
