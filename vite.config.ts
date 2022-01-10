@@ -26,8 +26,10 @@ const demoPlugin = {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(),demoPlugin],
+  assetsDir:'assets',
+  base:'./',
   server: {
     host: "0.0.0.0",
     open:true
-  }
+  } 
 });

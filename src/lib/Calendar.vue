@@ -23,14 +23,11 @@ const weeks = ["日", "一", "二", "三", "四", "五", "六"];
 const dates = ref<[]>([]); //填充的数据
 const props = defineProps({
   date: Date,
-});
-onMounted = (()=>{
-    data()
 })
+
 const data = () => {
   const year = props.date?.getFullYear();
   const month = props.date?.getMonth() + 1;
-  const day = props.date?.getDate();
   getDates(year, month);
 };
 const getDates = (year: Number, month: Number) => {
