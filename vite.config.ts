@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import fs from "fs"; 
 import { baseParse } from "@vue/compiler-core";
- 
+import path from 'path';
 const demoPlugin = {
   name: 'demo',
   //code块的代码 id链接
@@ -35,7 +35,8 @@ export default defineConfig({
   build:{
     lib:{
       entry:path.resolve(__dirname,'src/lib/index.ts'),
-      name:'myLib'
+      name:'Xin-ui',
+      fileName: (format) => `Xin-ui.${format}.js`
     },
     rollupOptions:{
       external:['vue'],

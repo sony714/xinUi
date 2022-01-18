@@ -1,6 +1,15 @@
 {
-  "name": "Xin-ui",
-  "version": "0.0.0",
+  "name": "xin-ui2022",
+  "version": "0.0.1",
+  "files": ["dist"],
+  "main": "./dist/Xin-ui.umd.js",
+  "module": "./dist/Xin-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/Xin-ui.es.js",
+      "require": "./dist/Xin-ui.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

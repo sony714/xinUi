@@ -1,6 +1,6 @@
 <template>
   <section>
-    <header>2012-5</header>
+    <header>{{ year }}-{{ month }}</header>
     <main>
       <div class="blockWeek">
         <div class="week" v-for="(item, index) in weeks" :key="index">
@@ -8,7 +8,13 @@
         </div>
       </div>
       <div class="blockDate">
-        <div class="date" v-for="(item, index) in 31" :key="index">
+        <div
+          class="date"
+          :class="{ active: active === index }"
+          @click="active = index"
+          v-for="(item, index) in dates"
+          :key="index"
+        >
           {{ item }}
         </div>
       </div>
@@ -17,44 +23,72 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //获取每月的天数
 const weeks = ["日", "一", "二", "三", "四", "五", "六"];
-const dates = ref<[]>([]); //填充的数据
+let dates = ref([]); //填充的数据
+let year = ref();
+let month = ref();
+let active = ref(-1);
 const props = defineProps({
-  date: Date,
-})
-
+  date: {
+    type: [String, Date],
+    default: new Date(),
+  }
+});
 const data = () => {
-  const year = props.date?.getFullYear();
-  const month = props.date?.getMonth() + 1;
-  getDates(year, month);
+  year.value = props.date?.getFullYear();
+  month.value = props.date.getMonth() + 1;
+  getDates(year.value, month.value);
 };
-const getDates = (year: Number, month: Number) => {
+const getDates = (year: number, month: number) => {
   //获取当前时间的星期
+ 
   let targetDay = new Date(year + "-" + month + "-" + 1).getDay();
+  
   //判断闰年
   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
     days[1] = 29;
   }
   if (targetDay > 0) {
     for (let i = 0; i < targetDay; i++) {
-      dates.push("");
+      dates.value.push("" as never);
     }
     for (let i = 0; i < days[month - 1]; i++) {
-      dates.push(i + 1);
+      dates.value.push(i + 1);
     }
-     let nextNum
-     if (dates.length > 35) {
-        nextNum = 42 - dates.length;
-      } else {
-        nextNum = 35 - dates.length;
-      }
-    for(let i=0;i<nextNum;i++){
-        dates.push('')
+    let nextNum;
+    if (dates.value.length > 35) {
+      nextNum = 42 - dates.value.length;
+    } else {
+      nextNum = 35 - dates.value.length;
     }
+    for (let i = 0; i < nextNum; i++) {
+      dates.value.push("" as never);
+    }
+  }else{
+    throw new Error('这个时间我不认识!')
   }
 };
+const handleString = () => {
+  year.value = props.date?.split("-")[0];
+  month.value = props.date?.split("-")[1];
+  getDates(year.value, month.value);
+};
+// onMounted(() => {
+//   if (typeof props.date === "string") {
+//     handleString();
+//   } else {
+//     data();
+//   }
+// });
+watchEffect(() => {
+  if (typeof props.date === "string") {
+    handleString();
+  } else {
+    data();
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -69,7 +103,7 @@ section {
     .blockWeek {
       display: flex;
       flex-direction: row;
-      flex: 1 0 13.2%;
+      flex: 0 0 13.2%;
       .week {
         flex: 1 0 13.2%;
         text-align: center;
@@ -83,13 +117,17 @@ section {
       flex-direction: row;
       flex-wrap: wrap;
       background-color: #d9d9d9;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       .date {
         flex: 1 0 13.2%;
         text-align: center;
         padding: 3px 0;
+        cursor: pointer;
         &:hover {
+          background-color: $green;
+        }
+        &.active {
           background-color: $green;
         }
       }
