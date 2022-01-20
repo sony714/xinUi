@@ -1,19 +1,12 @@
 <template>
-  <calendar v-model:date="value" />
-  <calendar v-model:date="value2" />
-  <Button @click="handleValue">点击切换</Button>
+  <Demo :component="Calendar1Demo" />
+  <Demo :component="Calendar2Demo" />
 </template>
- 
+
 <script setup lang="ts">
-import { ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
-import Calendar from "../lib/Calendar.vue";
-import Button from "../lib/Button.vue";
-let value = ref(new Date());
-let value2 = ref("2021-12");
-const handleValue = () => {
-  value2.value = "2021-14";
-};
+import Calendar1Demo from "../components/Calendar1.demo.vue";
+import Calendar2Demo from "../components/Calendar2.demo.vue";
+import Demo from "../components/Demo.vue";
 </script>
 
 <style scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <header>{{ year }}-{{ month }}</header>
+    <header>{{`${year}-${month}`}}</header>
     <main>
       <div class="blockWeek">
         <div class="week" v-for="(item, index) in weeks" :key="index">
@@ -26,8 +26,8 @@
 import { computed, onMounted, ref, watchEffect } from "vue";
 const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //获取每月的天数
 const weeks = ["日", "一", "二", "三", "四", "五", "六"];
-let dates = ref([]); //填充的数据
 let year = ref();
+let dates = ref([]); //填充的数据
 let month = ref();
 let active = ref(-1);
 const props = defineProps({
@@ -42,8 +42,8 @@ const data = () => {
   getDates(year.value, month.value);
 };
 const getDates = (year: number, month: number) => {
-  //获取当前时间的星期
- 
+  dates.value = []
+ //获取当前时间的星期
   let targetDay = new Date(year + "-" + month + "-" + 1).getDay();
   
   //判断闰年
@@ -75,13 +75,6 @@ const handleString = () => {
   month.value = props.date?.split("-")[1];
   getDates(year.value, month.value);
 };
-// onMounted(() => {
-//   if (typeof props.date === "string") {
-//     handleString();
-//   } else {
-//     data();
-//   }
-// });
 watchEffect(() => {
   if (typeof props.date === "string") {
     handleString();
