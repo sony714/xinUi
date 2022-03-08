@@ -39,8 +39,7 @@ const classes = computed(()=>{
        return  [
         { 'xinxin-round': props.round, 'xinxin-disabled': props.disabled },
         `xinxin-theme-${props.theme}`,
-        ,
-        `xinxin-size-${props.size}`,
+        `xinxin-size-${props.size}`
       ]
  })
 </script>

@@ -10,7 +10,7 @@
         :ref="
           (el) => {
             if (el) items[index] = el;
-          }
+          } 
         "
         :key="index"
         class="xinxin-tabs-wrap-item"

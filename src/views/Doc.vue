@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { inject, ref } from "@vue/runtime-core";
 import Topnav from "../components/Topnav.vue";
+ let checked = ref(false)
 const menuVisible = inject("menuVisible");
 </script>
 
@@ -10,7 +11,7 @@ const menuVisible = inject("menuVisible");
     <div class="content">
       <aside v-if="menuVisible">
         <div class="tabBar">
-          <h3>路由列表</h3>
+          <h3>开始使用</h3>
           <ul>
              <li>
                 <router-link to="/doc/intro">介绍</router-link>
@@ -36,6 +37,9 @@ const menuVisible = inject("menuVisible");
              <li>
               <router-link to="/doc/calendar">calendar</router-link>
             </li>
+             <li>
+              <router-link to="/doc/input">input</router-link>
+            </li>
           </ul>
         </div>
       </aside>
@@ -48,7 +52,8 @@ const menuVisible = inject("menuVisible");
 
 <style lang="scss" scoped>
 .router-link-active{
-  background-color: #ccc;
+  background-color: rgb(82, 140, 228);
+  color: #fff;
 }
 .layout {
   display: flex;
@@ -96,6 +101,9 @@ const menuVisible = inject("menuVisible");
     flex-grow: 1;
     padding: 20px;
     overflow: auto;
+  }
+  h3{
+    padding: 12px 0;
   }
 }
 </style>

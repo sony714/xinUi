@@ -8,8 +8,8 @@ import Intro from '../views/Intro.vue'
 import Start from  '../views/Start.vue'
 import Ins  from '../views/Ins.vue'
 import Calendar from '../views/CalendarDemo.vue'
-
 import {createWebHashHistory,createRouter} from 'vue-router'
+import Input from '../views/InputDemo.vue'
 const routes = [
     { path: '/', component: Home},  
      {path:'/doc',component: Doc,children:[
@@ -21,7 +21,8 @@ const routes = [
       {path:'tabs',component:TabsDemo},
       {path:'button',component:ButtonDemo},
       {path:'dialog',component:DialogDemo},
-      {path:'calendar',component:Calendar}
+      {path:'calendar',component:Calendar},
+      {path:'input',component:Input}
     ]}
   ]
  export const router = createRouter({
