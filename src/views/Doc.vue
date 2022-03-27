@@ -37,9 +37,9 @@ const menuVisible = inject("menuVisible");
              <li>
               <router-link to="/doc/calendar">calendar</router-link>
             </li>
-             <li>
+             <!-- <li>
               <router-link to="/doc/input">input</router-link>
-            </li>
+            </li> -->
           </ul>
         </div>
       </aside>
